@@ -1,0 +1,59 @@
+@{
+    ViewData["Title"] = "Editar Produto";
+    ViewData["Action"] = "Edit";
+}
+
+@model Models.Entidades.Produto
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+
+            <div class="card shadow-sm">
+                <div class="card-header bg-warning text-dark">
+                    <h4 class="mb-0"><i class="bi bi-pencil-square"></i> @ViewData["Title"]</h4>
+                </div>
+
+                <div class="card-body">
+                    <form asp-action="@ViewData["Action"]">
+                        
+                        <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
+
+                        <input type="hidden" asp-for="Id" />
+
+                        <div class="mb-3">
+                            <label asp-for="Nome" class="form-label fw-bold"></label>
+                            <input asp-for="Nome" class="form-control" />
+                            <span asp-validation-for="Nome" class="text-danger small"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Descricao" class="form-label fw-bold"></label>
+                            <input asp-for="Descricao" class="form-control" />
+                            <span asp-validation-for="Descricao" class="text-danger small"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="UnidadeMedida" class="form-label fw-bold"></label>
+                            <input asp-for="UnidadeMedida" class="form-control" style="max-width: 150px;" />
+                            <span asp-validation-for="UnidadeMedida" class="text-danger small"></span>
+                        </div>
+
+                        <hr />
+
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <a asp-action="Index" class="btn btn-outline-secondary me-md-2">Cancelar</a>
+                            <button type="submit" class="btn btn-warning px-4">Salvar Alterações</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

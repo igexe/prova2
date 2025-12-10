@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Cotação</title>
+    <script type="importmap"></script>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/AspNet_MVC.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <style>
+    .navbar-custom {
+        background-color: #111111; /* Preto sólido profissional */
+        backdrop-filter: blur(10px); /* Efeito moderno se houver transparência */
+    }
+    
+    .navbar-brand {
+        letter-spacing: 1px;
+        font-weight: 700;
+        color: #fff !important;
+    }
+
+    .nav-link {
+        font-weight: 500;
+        font-size: 0.95rem;
+        transition: all 0.3s ease;
+        color: rgba(255,255,255,0.7) !important; /* Branco suave */
+    }
+
+    .nav-link:hover {
+        color: #fff !important;
+        transform: translateY(-1px); /* Leve flutuação ao passar o mouse */
+    }
+
+    .nav-link.active {
+        color: #fff !important;
+    }
+
+    .btn-login-custom {
+        background-color: #fff;
+        color: #000;
+        font-weight: 600;
+        border-radius: 6px;
+        padding: 6px 20px;
+        transition: all 0.3s;
+    }
+
+    .btn-login-custom:hover {
+        background-color: #e0e0e0;
+        transform: translateY(-1px);
+    }
+</style>
+
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom box-shadow mb-4 py-3">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center me-4" asp-area="" asp-controller="Home" asp-action="Index">
+                <span class="fs-4">COTAÇÃO</span><span class="text-primary fs-4">.SYS</span>
+            </a>
+
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+                    data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="navbar-collapse collapse d-lg-inline-flex justify-content-between">
+                
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-2">
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Cotacoes" asp-action="Index">Cotações</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Produtos" asp-action="Index">Produtos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Fornecedores" asp-action="Index">Fornecedores</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-warning" asp-area="" asp-controller="PainelFornecedor" asp-action="Index">
+                            Painel Fornecedor
+                        </a>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav align-items-center">
+                    @if (User.Identity?.IsAuthenticated ?? false)
+                    {
+                        <li class="nav-item me-3">
+                            <span class="navbar-text text-light small">
+                                Olá, <strong class="text-white">@User.Identity!.Name</strong>
+                            </span>
+                        </li>
+                        <li class="nav-item">
+                            <a class="btn btn-outline-light btn-sm px-3" asp-area="" asp-controller="Autenticacao" asp-action="Logout">
+                                Sair
+                            </a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="nav-item">
+                            <a class="btn btn-login-custom btn-sm" asp-area="" asp-controller="Autenticacao" asp-action="Login">
+                                Entrar
+                            </a>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2025 - AspNet_MVC
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

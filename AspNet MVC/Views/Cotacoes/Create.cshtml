@@ -1,0 +1,188 @@
+@model Models.Entidades.Cotacao
+
+@{
+    ViewData["Title"] = "Nova Cotação";
+    var produtos = ViewBag.Produtos as IEnumerable<Models.Entidades.Produto>;
+    var fornecedores = ViewBag.Fornecedores as IEnumerable<Models.Entidades.Fornecedor>;
+}
+
+<style>
+    /* Estilo para os cards selecionáveis (Produtos/Fornecedores) */
+    .option-card {
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+        border: 1px solid #495057; /* Borda cinza escuro */
+        background-color: #2b3035; /* Fundo levemente mais claro que o body */
+    }
+
+    .option-card:hover {
+        border-color: #6c757d;
+        transform: translateY(-2px);
+    }
+
+    /* Esconde o checkbox original visualmente, mas mantém acessível */
+    .btn-check-custom {
+        position: absolute;
+        clip: rect(0,0,0,0);
+        pointer-events: none;
+    }
+
+    /* Quando o checkbox (escondido) estiver marcado, estiliza o label adjacente */
+    .btn-check-custom:checked + .option-card {
+        background-color: rgba(13, 110, 253, 0.15); /* Fundo azul transparente */
+        border-color: #0d6efd; /* Borda azul primária */
+        box-shadow: 0 0 10px rgba(13, 110, 253, 0.3);
+    }
+
+    .btn-check-custom:checked + .option-card .icon-check {
+        color: #0d6efd;
+        opacity: 1;
+    }
+
+    .icon-check {
+        opacity: 0.2;
+        transition: 0.2s;
+    }
+    
+    .section-title {
+        border-left: 4px solid #0d6efd;
+        padding-left: 10px;
+        color: #fff;
+    }
+</style>
+
+<div class="container py-4">
+    
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h2 class="fw-bold text-dark"><i class="bi bi-cart-plus me-2"></i>@ViewData["Title"]</h2>
+            <p class="text-secondary mb-0">Preencha os dados abaixo para iniciar um novo processo de compra.</p>
+        </div>
+    </div>
+
+    <div class="card border-secondary shadow-lg bg-dark text-light">
+        <div class="card-body p-4">
+            <form asp-action="Create" method="post">
+                <div asp-validation-summary="ModelOnly" class="alert alert-danger mb-4" role="alert"></div>
+
+                <h5 class="section-title mb-3">1. Dados da Cotação</h5>
+                <div class="row g-3 mb-5">
+                    <div class="col-md-8">
+                        <div class="form-floating text-dark">
+                            <input asp-for="Descricao" class="form-control" placeholder="Ex: Compra de Material de Escritório" style="background-color: #e9ecef;" />
+                            <label asp-for="Descricao">Descrição / Motivo</label>
+                        </div>
+                        <span asp-validation-for="Descricao" class="text-danger small"></span>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="form-floating text-dark">
+                            <input asp-for="DataFechamento" type="date" class="form-control" placeholder="Data" style="background-color: #e9ecef;" />
+                            <label asp-for="DataFechamento">Data Limite</label>
+                        </div>
+                        <span asp-validation-for="DataFechamento" class="text-danger small"></span>
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                    <h5 class="section-title mb-0">2. Selecionar Produtos</h5>
+                    <small class="text-secondary">Clique para selecionar</small>
+                </div>
+
+                <div class="row g-3 mb-5">
+                    @if (produtos != null && produtos.Any())
+                    {
+                        foreach (var p in produtos)
+                        {
+                            <div class="col-md-6 col-lg-4">
+                                <input type="checkbox" 
+                                       class="btn-check-custom" 
+                                       name="produtosSelecionados" 
+                                       value="@p.Id" 
+                                       id="prod_@p.Id">
+                                
+                                <label class="option-card d-flex align-items-center p-3 rounded w-100 h-100" for="prod_@p.Id">
+                                    <div class="me-3">
+                                        <i class="bi bi-box-seam fs-3 text-secondary icon-check"></i>
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <h6 class="mb-0 fw-bold text-light">@p.Nome</h6>
+                                        <small class="text-secondary">Unidade: @p.UnidadeMedida</small>
+                                    </div>
+                                    <div class="ms-2">
+                                        <i class="bi bi-check-circle-fill fs-5 icon-check"></i>
+                                    </div>
+                                </label>
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <div class="col-12">
+                            <div class="alert alert-warning d-flex align-items-center" role="alert">
+                                <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                                <div>Nenhum produto cadastrado. <a asp-controller="Produtos" asp-action="Create" class="alert-link">Cadastre um produto</a> antes de continuar.</div>
+                            </div>
+                        </div>
+                    }
+                </div>
+
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                    <h5 class="section-title mb-0">3. Convidar Fornecedores</h5>
+                    <small class="text-secondary">Quem receberá esta cotação?</small>
+                </div>
+
+                <div class="row g-3 mb-4">
+                    @if (fornecedores != null && fornecedores.Any())
+                    {
+                        foreach (var f in fornecedores)
+                        {
+                            <div class="col-md-6 col-lg-4">
+                                <input type="checkbox" 
+                                       class="btn-check-custom" 
+                                       name="fornecedoresSelecionados" 
+                                       value="@f.Id" 
+                                       id="forn_@f.Id">
+
+                                <label class="option-card d-flex align-items-center p-3 rounded w-100 h-100" for="forn_@f.Id">
+                                    <div class="me-3">
+                                        <i class="bi bi-truck fs-3 text-secondary icon-check"></i>
+                                    </div>
+                                    <div class="flex-grow-1 text-truncate">
+                                        <h6 class="mb-0 fw-bold text-light text-truncate" title="@f.NomeFantasia">@f.NomeFantasia</h6>
+                                        <small class="text-secondary text-truncate d-block" title="@f.Email">@f.Email</small>
+                                    </div>
+                                    <div class="ms-2">
+                                        <i class="bi bi-check-circle-fill fs-5 icon-check"></i>
+                                    </div>
+                                </label>
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <div class="col-12">
+                            <div class="alert alert-warning d-flex align-items-center" role="alert">
+                                <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                                <div>Nenhum fornecedor disponível. <a asp-controller="Fornecedores" asp-action="Create" class="alert-link">Cadastre um fornecedor</a>.</div>
+                            </div>
+                        </div>
+                    }
+                </div>
+
+                <hr class="border-secondary my-4" />
+
+                <div class="d-flex justify-content-end gap-2">
+                    <a asp-action="Index" class="btn btn-outline-light px-4">Cancelar</a>
+                    <button type="submit" class="btn btn-primary px-5 fw-bold">
+                        <i class="bi bi-send me-2"></i>Criar Cotação
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

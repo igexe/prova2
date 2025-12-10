@@ -1,0 +1,107 @@
+﻿@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+<style>
+    /* Estilos específicos para esta página */
+    .hero-section {
+        background: linear-gradient(135deg, #1a1a1a 0%, #2c3e50 100%); /* Gradiente sutil */
+        border-radius: 12px;
+        padding: 4rem 2rem;
+        color: white;
+        margin-bottom: 2rem;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+
+    .stat-card {
+        background-color: #212529; /* Fundo escuro para os cards */
+        border: 1px solid #333;
+        border-radius: 10px;
+        padding: 1.5rem;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        height: 100%;
+    }
+
+    .stat-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+        border-color: #0d6efd; /* Azul ao passar o mouse */
+        cursor: pointer;
+    }
+
+    .stat-card h3 {
+        font-size: 1.25rem;
+        margin-top: 1rem;
+        color: #fff;
+    }
+
+    .stat-card p {
+        color: #adb5bd; /* Cinza claro */
+        font-size: 0.9rem;
+    }
+
+    .icon-box {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+</style>
+
+<div class="hero-section text-center text-md-start d-flex flex-column flex-md-row align-items-center justify-content-between">
+    <div>
+        <h1 class="display-5 fw-bold mb-3">Bem-vindo ao Cotação.SYS</h1>
+        <p class="lead mb-4 text-white-50">Gerencie suas compras, compare preços e controle seus fornecedores em um único lugar.</p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+            <a asp-controller="Cotacoes" asp-action="Create" class="btn btn-primary btn-lg px-4 me-md-2 fw-bold">Nova Cotação</a>
+            <a asp-controller="Produtos" asp-action="Index" class="btn btn-outline-light btn-lg px-4">Ver Estoque</a>
+        </div>
+    </div>
+    <div class="d-none d-md-block ms-4 opacity-50">
+        <i class="bi bi-graph-up-arrow display-1"></i>
+    </div>
+</div>
+
+<div class="row g-4">
+    <div class="col-md-4">
+        <a asp-controller="Cotacoes" asp-action="Index" class="text-decoration-none">
+            <div class="stat-card">
+                <div class="icon-box bg-primary bg-opacity-10 text-primary">
+                    <i class="bi bi-file-earmark-text"></i>
+                </div>
+                <h3>Gerenciar Cotações</h3>
+                <p>Visualize as cotações em aberto, aprovadas e o histórico de compras.</p>
+            </div>
+        </a>
+    </div>
+
+    <div class="col-md-4">
+        <a asp-controller="Fornecedores" asp-action="Index" class="text-decoration-none">
+            <div class="stat-card">
+                <div class="icon-box bg-success bg-opacity-10 text-success">
+                    <i class="bi bi-people"></i>
+                </div>
+                <h3>Base de Fornecedores</h3>
+                <p>Cadastre novos parceiros e gerencie os dados de contato.</p>
+            </div>
+        </a>
+    </div>
+
+    <div class="col-md-4">
+        <a asp-controller="Produtos" asp-action="Index" class="text-decoration-none">
+            <div class="stat-card">
+                <div class="icon-box bg-warning bg-opacity-10 text-warning">
+                    <i class="bi bi-box-seam"></i>
+                </div>
+                <h3>Catálogo de Produtos</h3>
+                <p>Controle os itens disponíveis para cotação e especificações técnicas.</p>
+            </div>
+        </a>
+    </div>
+</div>

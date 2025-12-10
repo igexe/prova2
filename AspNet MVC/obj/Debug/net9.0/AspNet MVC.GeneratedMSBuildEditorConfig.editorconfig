@@ -1,0 +1,117 @@
+is_global = true
+build_property.TargetFramework = net9.0
+build_property.TargetFramework = net9.0
+build_property.TargetPlatformMinVersion = 
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = AspNet_MVC
+build_property.RootNamespace = AspNet_MVC
+build_property.ProjectDir = C:\Users\ig\Downloads\prova web2\prova2\AspNet MVC\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 9.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\ig\Downloads\prova web2\prova2\AspNet MVC
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 9.0
+build_property.EnableCodeStyleSeverity = 
+
+[C:/Users/ig/Downloads/prova web2/prova2/AspNet MVC/Views/Autenticacao/AccessDenied.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0ZW50aWNhY2FvXEFjY2Vzc0RlbmllZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ig/Downloads/prova web2/prova2/AspNet MVC/Views/Autenticacao/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0ZW50aWNhY2FvXExvZ2luLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ig/Downloads/prova web2/prova2/AspNet MVC/Views/Cotacoes/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ290YWNvZXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ig/Downloads/prova web2/prova2/AspNet MVC/Views/Cotacoes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ290YWNvZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ig/Downloads/prova web2/prova2/AspNet MVC/Views/Cotacoes/Resultado.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ290YWNvZXNcUmVzdWx0YWRvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ig/Downloads/prova web2/prova2/AspNet MVC/Views/Fornecedores/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9ybmVjZWRvcmVzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ig/Downloads/prova web2/prova2/AspNet MVC/Views/Fornecedores/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9ybmVjZWRvcmVzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ig/Downloads/prova web2/prova2/AspNet MVC/Views/Fornecedores/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9ybmVjZWRvcmVzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ig/Downloads/prova web2/prova2/AspNet MVC/Views/Fornecedores/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9ybmVjZWRvcmVzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ig/Downloads/prova web2/prova2/AspNet MVC/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ig/Downloads/prova web2/prova2/AspNet MVC/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ig/Downloads/prova web2/prova2/AspNet MVC/Views/PainelFornecedor/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFpbmVsRm9ybmVjZWRvclxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ig/Downloads/prova web2/prova2/AspNet MVC/Views/PainelFornecedor/Responder.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFpbmVsRm9ybmVjZWRvclxSZXNwb25kZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ig/Downloads/prova web2/prova2/AspNet MVC/Views/Produtos/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHV0b3NcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ig/Downloads/prova web2/prova2/AspNet MVC/Views/Produtos/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHV0b3NcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ig/Downloads/prova web2/prova2/AspNet MVC/Views/Produtos/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHV0b3NcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ig/Downloads/prova web2/prova2/AspNet MVC/Views/Produtos/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHV0b3NcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ig/Downloads/prova web2/prova2/AspNet MVC/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ig/Downloads/prova web2/prova2/AspNet MVC/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ig/Downloads/prova web2/prova2/AspNet MVC/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ig/Downloads/prova web2/prova2/AspNet MVC/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ig/Downloads/prova web2/prova2/AspNet MVC/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-wsqs9ook9w

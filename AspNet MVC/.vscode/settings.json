@@ -1,0 +1,5 @@
+{
+    "appService.preDeployTask": "publish-release",
+    "appService.deploySubpath": "bin\\Release\\net9.0\\publish",
+    "appService.defaultWebAppToDeploy": "/subscriptions/ffceea96-23ec-4bfa-91f0-355827c17e13/resourceGroups/ueg-producao/providers/Microsoft.Web/sites/aula-web-ii-ueg"
+}
